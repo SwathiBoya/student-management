@@ -1,0 +1,33 @@
+<menu></menu>
+<h2 style="text-align:center">Sudent Details</h2>
+<input type="button" value="Add Student" (click)="onAdd(this.students)" >
+
+<input type="text" placeholder="id" [(ngModel)]="stdnum">
+<input type="button" value="Remove Student" (click)="onRemove(stdnum)"><br>
+
+<input type="text" placeholder="Name" [(ngModel)]="student.name"><br>
+<input type="text" placeholder="Class" [(ngModel)]="student.class"><br>
+<input type="text" placeholder="Subject" [(ngModel)]="student.subject"><br>
+<input type="text" placeholder="School Name" [(ngModel)]="student.schoolname">
+<ul class="heroes">
+    <li *ngFor="let student of students"
+    [class.selected]="student === selectedStudent"
+    (click)="onSelect(student)">
+    <span>{{student.id}} {{student.name}} {{student.class}} {{student.subject}} {{student.schoolname}}</span>
+    <button type="button" (click)="onDelete(this.student)">Delete</button>    
+  </li>
+</ul>
+
+<div *ngIf="selectedStudent">
+
+    <h2>{{selectedStudent.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedStudent.id}}</div>
+    <div>
+            <label>Name:</label><input [(ngModel)]="selectedStudent.name" placeholder="Name"><br>
+            <label>Class:</label><input [(ngModel)]="selectedStudent.class" placeholder="Class"><br>
+            <label>Subject:</label><input [(ngModel)]="selectedStudent.subject" placeholder="Subject"><br>
+            <label>SchoolName:</label><input [(ngModel)]="selectedStudent.schoolname" placeholder="Schoo Name">
+
+    </div>
+  
+  </div>

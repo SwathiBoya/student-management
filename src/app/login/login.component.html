@@ -1,0 +1,12 @@
+<h2 class="logintitle">Login Form</h2>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+  <h1 style="text-align:center">Login</h1>
+    <div class="fadeIn first">
+    </div>
+      <input type="text" id="login" class="second" name="uname" placeholder="Username" [(ngModel)]="data.username" >
+      <input type="password" id="password" class="third" name="password" placeholder="Password" [(ngModel)]="data.password">
+      <input type="button" class="fourth" value="Log In" (click)="onLogin()">
+  </div>
+</div>
+
